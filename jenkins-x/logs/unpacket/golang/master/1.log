@@ -1,0 +1,113 @@
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-4zhmw[0m
+{"level":"warn","ts":1568824613.1618345,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568824613.16238,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-xmm9f[0m
+{"level":"warn","ts":1568824614.1765835,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1568824614.1774564,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-unpacket-golang-master-zjd8m[0m
+{"level":"warn","ts":1568824620.2228796,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568824620.427272,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/********/golang.git @ bcc683a85f5a57048d97cae0fead6e429f3dd6f1 in path /workspace/source"}
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:bcc683a85f5a57048d97cae0fead6e429f3dd6f1
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+SKIP merge-pull-refs: Nothing to merge
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+Deleting and cloning the Jenkins X versions repo
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+Effective pipeline written to jenkins-x-effective.yml
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-tekton-crds[0m
+running command: echo \$(**-release-version) > VERSION
+
+running command: ** step tag --version \$(cat VERSION)
+Updating chart version in charts/golang/Chart.yaml to 0.0.1
+Updating repository in charts/golang/values.yaml to 411493707527.dkr.ecr.us-west-2.amazonaws.com/********/golang
+Updating tag in charts/golang/values.yaml to 0.0.1
+Tag v0.0.1 created and pushed to remote origin
+
+WARNING: failed to find secret kaniko-secret in namespace **: secrets "kaniko-secret" not found
+PipelineActivity for ********-golang-master-1
+Applying changes 
+upserted PipelineResource ********-golang-master for the git repository https://github.com/********/golang.git
+upserted Task ********-golang-master-from-build-pack-1
+upserted Pipeline ********-golang-master-1
+created PipelineRun ********-golang-master-1
+created PipelineStructure ********-golang-master-1
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-xvbg4[0m
+{"level":"warn","ts":1568824629.832365,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568824629.8326561,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-7h4nj[0m
+{"level":"warn","ts":1568824630.825564,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1568824630.8270457,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/golang\""}
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-unpacket-golang-master-srrn2[0m
+{"level":"warn","ts":1568824637.8628445,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568824638.0558712,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/********/golang.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:bcc683a85f5a57048d97cae0fead6e429f3dd6f1
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/golang main.go
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/golang"]                       
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2019/09/18 16:37:25 pushed blob: sha256:9983914dc0516d1f7ef59aa93ca0015ef41b882b1f511e807a3cc2708fdeaabf
+2019/09/18 16:37:27 pushed blob: sha256:38fbc7a04c9cbab2cf9163e47d6cd0192c85e77fa4268cbecb39a6548e837aee
+2019/09/18 16:37:27 411493707527.dkr.ecr.us-west-2.amazonaws.com/********/golang:0.0.1: digest: sha256:68c98c97452c8ada8694eca84a8a40ad73326775549ba66f98db690bbd1b0973 size: 428
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/golang to an unshallow repository
+no previous commit version found so change diff unavailable
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file golang-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32munpacket-golang-master-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+Promoting app golang version 0.0.1 to namespace **-staging
+Created Pull Request: https://github.com/********/environment-coliseumusa-staging/pull/1
+Pull Request https://github.com/********/environment-coliseumusa-staging/pull/1 is merged at sha 13954d36055f610daedef61291f37f268be82051
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names golang, **-golang, **-staging-golang
