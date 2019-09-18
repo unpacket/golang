@@ -1,1 +1,9 @@
 buildPack: go
+pipelineConfig:
+  pipelines:
+    pullRequest:
+      postBuild:
+        preSteps:
+        - command: echo "======================= CuSTOM Postbuild pre  ======================"
+        steps:
+        - command: echo "======================= CUSTOM Postbuild post ======================"
